@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="weather"
+            type="com.renderforest.weather.models.Weather" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/label_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{weather.title}"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="true"
+            app:imageFromUrl="@{weather.iconUrl}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_title" />
+
+        <TextView
+            android:id="@+id/label_night"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_night"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/label_morning"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_icon" />
+
+        <TextView
+            android:id="@+id/label_morning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_morning"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/label_day"
+            app:layout_constraintStart_toEndOf="@id/label_night"
+            app:layout_constraintTop_toBottomOf="@id/image_icon" />
+
+        <TextView
+            android:id="@+id/label_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_day"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/label_evening"
+            app:layout_constraintStart_toEndOf="@id/label_morning"
+            app:layout_constraintTop_toBottomOf="@id/image_icon" />
+
+        <TextView
+            android:id="@+id/label_evening"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_evening"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/label_day"
+            app:layout_constraintTop_toBottomOf="@id/image_icon" />
+
+        <TextView
+            android:id="@+id/label_night_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{String.valueOf(weather.nightTemp)}"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/label_night"
+            app:layout_constraintStart_toStartOf="@id/label_night"
+            app:layout_constraintTop_toBottomOf="@id/label_night" />
+
+        <TextView
+            android:id="@+id/label_morning_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{String.valueOf(weather.morningTemp)}"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/label_morning"
+            app:layout_constraintStart_toStartOf="@id/label_morning"
+            app:layout_constraintTop_toBottomOf="@id/label_morning" />
+
+        <TextView
+            android:id="@+id/label_day_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{String.valueOf(weather.dayTemp)}"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/label_day"
+            app:layout_constraintStart_toStartOf="@id/label_day"
+            app:layout_constraintTop_toBottomOf="@id/label_day" />
+
+        <TextView
+            android:id="@+id/label_evening_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{String.valueOf(weather.eveningTemp)}"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/label_evening"
+            app:layout_constraintStart_toStartOf="@id/label_evening"
+            app:layout_constraintTop_toBottomOf="@id/label_evening" />
+
+        <TextView
+            android:id="@+id/label_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_humidity_"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/label_humidity_value"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_night_value" />
+
+        <TextView
+            android:id="@+id/label_humidity_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@{String.valueOf(weather.humidity)}"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/label_humidity"
+            app:layout_constraintTop_toBottomOf="@id/label_night_value" />
+
+        <TextView
+            android:id="@+id/label_wind_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_wind_speed_"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/label_wind_speed_value"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_humidity" />
+
+        <TextView
+            android:id="@+id/label_wind_speed_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@{String.valueOf(weather.windSpeed)}"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/label_wind_speed"
+            app:layout_constraintTop_toBottomOf="@id/label_humidity" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

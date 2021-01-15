@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Renderforest Weather</string>
+
+    <string name="label_night">Night</string>
+    <string name="label_morning">Morning</string>
+    <string name="label_day">Day</string>
+    <string name="label_evening">Evening</string>
+    <string name="label_humidity_">Humidity(%):</string>
+    <string name="label_wind_speed_">Wind Speed(metre/sec):</string>
+    <string name="label_check_your_internet_connection">Please check your internet connection</string>
+
 </resources>
