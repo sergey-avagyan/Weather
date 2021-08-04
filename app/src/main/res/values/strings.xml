@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Renderforest Weather</string>
+    <string name="app_name">Weather</string>
 
     <string name="label_night">Night</string>
     <string name="label_morning">Morning</string>
